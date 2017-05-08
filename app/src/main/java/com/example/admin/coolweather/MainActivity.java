@@ -26,17 +26,10 @@ public class MainActivity extends AppCompatActivity {
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                String result = parent.getItemAtPosition(position).toString(); //获取选择项的值
-                if (result=="北京市"){
+//                String result = parent.getItemAtPosition(position).toString(); //获取选择项的值if (result=="北京市"){
                     Intent intent=new Intent(MainActivity.this,Main2Activity.class);
+                    intent.putExtra("a",data[position]);
                     startActivity(intent);
-                }
-                else if (result=="浙江省"){
-                    Intent intent=new Intent(MainActivity.this,Main3Activity.class);
-                    startActivity(intent);
-                }
-                else
-                    Toast.makeText(MainActivity.this,result, Toast.LENGTH_SHORT).show();//输出选中项消息
             }
         });
 
